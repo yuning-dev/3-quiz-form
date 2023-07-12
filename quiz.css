@@ -1,0 +1,36 @@
+body {
+    margin: auto;
+    width: 75%;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(197, 255, 255);
+}
+
+#mainPage {
+    padding: 30px 50px;
+    background-color: rgb(226, 251, 254);
+}
+
+h1 {
+    text-align: center;
+    padding: 15px 0;
+}
+
+.question {
+    margin: 60px 0;
+    font-size: 1.2em;
+}
+
+input[type = "radio"] {
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+select[name] {
+    margin-left: 20px;
+}
+
+input[type = "text"] {
+    margin-left: 20px;
+    margin-top: 25px;
+    width: 50px;
+}
