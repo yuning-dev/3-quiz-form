@@ -34,3 +34,23 @@ input[type = "text"] {
     margin-top: 25px;
     width: 50px;
 }
+
+.result {
+    margin-top: 30px;
+}
+
+.submitButton {
+    text-align: center;
+}
+
+input[type = "submit"] {
+    font-size: 1em;
+    background: rgb(34, 144, 169);
+    border-color:rgb(34, 144, 169);
+    color: white;
+    padding: 6px 12px;
+}
+
+input[type = "submit"]:hover {
+    cursor: pointer;
+}

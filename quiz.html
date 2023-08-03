@@ -7,41 +7,46 @@
     <div id = "mainPage">
         <h1>Welcome to the Fun Quiz!</h1>
         <h2>Think you have a pretty good grasp of animal facts? Test your knowledge and you may surprise yourself...</h2>
-        <form>
-            <div class = "question">
-                <p>The tallest animal is the giraffe. What is their average height?</p>
-                <input type = "radio" name = "giraffeHeight" value = "3m" /> 3m
-                <input type = "radio" name = "giraffeHeight" value = "4m" /> 4m
-                <input type = "radio" name = "giraffeHeight" value = "5m" /> 5m
-                <input type = "radio" name = "giraffeHeight" value = "6m" /> 6m
-            </div>
-            <div class = "question">
-                <p>What are the 2 most consumed fish in the world? (To select the second fish, hold the ctrl or cmd key and left click the option)</p>
-                <select name = "mostEatenFish" size = "4" multiple = "multiple">
-                    <option value = "tuna">Tuna</option>
-                    <option value = "salmon">Salmon</option>
-                    <option value = "sardines">Sardines</option>
-                    <option value = "cod">Cod</option>
-                </select>
-            </div>
-            <div class = "question">
-                <p>The animal with the biggest eyes is the giant squid. What object is closest to the size of their eyes?</p>
-                <input type = "radio" name = "eyesSize" value = "carTire" />A car tire
-                <input type = "radio" name = "eyesSize" value = "plate" />A dinner plate 
-                <input type = "radio" name = "eyesSize" value = "pizza" />A large pizza
-                <input type = "radio" name = "eyesSize" value = "busTire" />A bus tire
-            </div>
-            <div class = "question">The fastest flying insect is the dragonfly. What is their recorded speed? Enter an integer value below. 
-                <br>
-                <input type = "text" maxlength="2"> miles per hour
-            </div>
-            <div class = "question">
-                <p>What is the animal with the densest fur?</p>
-                <input type = "radio" name = "densestFur" value = "chinchilla" />Chinchilla
-                <input type = "radio" name = "densestFur" value = "polarBear" />Polar bear
-                <input type = "radio" name = "densestFur" value = "mountainGorilla" />Mountain gorilla
-                <input type = "radio" name = "densestFur" value = "seaOtter" />Sea otter
-            </div>
-        </form>
+        <div class = "question">
+            <p>The tallest animal is the giraffe. What is their average height?</p>
+            <input type = "radio" name = "giraffeHeight" value = "3m" onclick = "showCorrectAnswer1()"/> 3m
+            <input type = "radio" name = "giraffeHeight" value = "4m" onclick = "showCorrectAnswer1()"/> 4m
+            <input type = "radio" name = "giraffeHeight" value = "5m" onclick = "congratulate1()"/> 5m
+            <input type = "radio" name = "giraffeHeight" value = "6m" onclick = "showCorrectAnswer1()"/> 6m
+            <div id = "result1" class = "result"></div>
+        </div>
+        <div class = "question">
+            <p>What are the 2 most consumed fish in the world? (To select the second fish, hold the ctrl or cmd key and left click the option)</p>
+            <select name = "mostEatenFish" size = "4" multiple = "multiple">
+                <option value = "tuna">Tuna</option>
+                <option value = "salmon">Salmon</option>
+                <option value = "sardines">Sardines</option>
+                <option value = "cod">Cod</option>
+            </select>
+        </div>
+        <div class = "question">
+            <p>The animal with the biggest eyes is the giant squid. What object is closest to the size of their eyes?</p>
+            <input type = "radio" name = "eyesSize" value = "carTire" onclick = "showCorrectAnswer2()"/>A car tire
+            <input type = "radio" name = "eyesSize" value = "plate" onclick = "congratulate2()"/>A dinner plate 
+            <input type = "radio" name = "eyesSize" value = "pizza" onclick = "showCorrectAnswer2()"/>A large pizza
+            <input type = "radio" name = "eyesSize" value = "busTire" onclick = "showCorrectAnswer2()"/>A bus tire
+            <div id = "result2" class = "result"></div>
+        </div>
+        <div class = "question">The fastest flying insect is the dragonfly. What is their recorded speed? Enter an integer value below. 
+            <br>
+            <input type = "text" maxlength="2"> miles per hour
+        </div>
+        <div class = "question">
+            <p>What is the animal with the densest fur?</p>
+            <input type = "radio" name = "densestFur" value = "chinchilla" onclick = "showCorrectAnswer3()"/>Chinchilla
+            <input type = "radio" name = "densestFur" value = "polarBear" onclick = "showCorrectAnswer3()"/>Polar bear
+            <input type = "radio" name = "densestFur" value = "mountainGorilla" onclick = "showCorrectAnswer3()"/>Mountain gorilla
+            <input type = "radio" name = "densestFur" value = "seaOtter" onclick = "congratulate3()"/>Sea otter
+            <div id = "result3" class = "result"></div>
+        </div>
+        <div class = "submitButton">
+            <input type = "submit" value = "Submit" />
+        </div>
     </div>
 </body>
+<script src = "quiz.js"></script>
