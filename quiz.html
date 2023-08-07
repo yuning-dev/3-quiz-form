@@ -17,12 +17,13 @@
         </div>
         <div class = "question">
             <p>What are the 2 most consumed fish in the world? (To select the second fish, hold the ctrl or cmd key and left click the option)</p>
-            <select name = "mostEatenFish" size = "4" multiple = "multiple">
+            <select name = "mostEatenFish" size = "4" multiple = "multiple" id = "mostEatenFish">
                 <option value = "tuna">Tuna</option>
                 <option value = "salmon">Salmon</option>
                 <option value = "sardines">Sardines</option>
                 <option value = "cod">Cod</option>
             </select>
+            <input type = "submit" value = "Confirm choice" id = "confirmMultiSelect" />
         </div>
         <div class = "question">
             <p>The animal with the biggest eyes is the giant squid. What object is closest to the size of their eyes?</p>
@@ -32,9 +33,10 @@
             <input type = "radio" name = "eyesSize" value = "busTire" onclick = "showCorrectAnswer2()"/>A bus tire
             <div id = "result2" class = "result"></div>
         </div>
-        <div class = "question">The fastest flying insect is the dragonfly. What is their recorded speed? Enter an integer value below. 
+        <div class = "question">The fastest flying insect is the dragonfly. What is their recorded speed? Enter an integer value below. (Hint: the answer is a multiple of 5)
             <br>
-            <input type = "text" maxlength="2"> miles per hour
+            <input type = "text" maxlength="2" id = "flightSpeed" onchange = "checkTextInput()"/> miles per hour
+            <div id = "result4" class = "result"></div>
         </div>
         <div class = "question">
             <p>What is the animal with the densest fur?</p>

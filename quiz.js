@@ -32,19 +32,50 @@ function generateInteger(max) {
 
 function showCorrectAnswer1() {
     let resultDiv = document.getElementById("result1")
-    resultDiv.innerText = "That's incorrect. " + "The correct answer is " + "5m" + "."
+    resultDiv.innerText = "That's incorrect. The correct answer is " + "5m" + "."
     resultDiv.style.color = "#FF4D4D"
 }
 
 function showCorrectAnswer2() {
     let resultDiv = document.getElementById("result2")
-    resultDiv.innerText = "That's incorrect. " + "The correct answer is " + "A dinner plate" + "."
+    resultDiv.innerText = "That's incorrect. The correct answer is " + "A dinner plate" + "."
     resultDiv.style.color = "#FF4D4D"
 }
 
 function showCorrectAnswer3() {
     let resultDiv = document.getElementById("result3")
-    resultDiv.innerText = "That's incorrect. " + "The correct answer is " + "Sea otter" + "."
+    resultDiv.innerText = "That's incorrect. The correct answer is " + "Sea otter" + "."
     resultDiv.style.color = "#FF4D4D"
 }
+
+function checkTextInput() {
+    console.log('Called')
+    let randomInt = generateInteger(20)
+    let userInput = Number(document.getElementById("flightSpeed").value)
+    let resultDiv = document.getElementById("result4")
+    if (userInput === 35) {
+        resultDiv.innerText = String.fromCodePoint(0x1F389) + " Congratulation, that's the correct answer! " + String.fromCodePoint(emojis[randomInt])
+        resultDiv.style.color = "#33991A"
+    }
+    else {
+        resultDiv.innerText = "That's incorrect. The correct answer is " + "35 miles per hour" + "."
+        resultDiv.style.color = "#FF4D4D"
+    }
+}
+
+// function checkMultiSelect() {
+//     const select = document.getElementById("mostEatenFish")
+//     const button = document.getElementById("confirmMultiChoice")
+//     button.addEventListener("click" () => {
+//         const selectedOpctions = []
+
+//         for (const option of select.options) {
+//             if (option.selected) {
+//                 selectedOpctions.push(option.value)
+//             }
+//         }
+//     }
+
+//     console.timeLog(selectedOptions)
+// }
 
