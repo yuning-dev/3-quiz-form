@@ -63,19 +63,21 @@ function checkTextInput() {
     }
 }
 
-// function checkMultiSelect() {
-//     const select = document.getElementById("mostEatenFish")
-//     const button = document.getElementById("confirmMultiChoice")
-//     button.addEventListener("click" () => {
-//         const selectedOpctions = []
-
-//         for (const option of select.options) {
-//             if (option.selected) {
-//                 selectedOpctions.push(option.value)
-//             }
-//         }
-//     }
-
-//     console.timeLog(selectedOptions)
-// }
-
+function checkSelection() {
+    let checkbox = document.getElementsByName("mostEatenFish")
+    let button = document.getElementById("confirmSelection")
+    let resultDiv = document.getElementById("result5")
+    let randomInt = generateInteger(20)
+    for (let i = 0; i < checkbox.length; i++) {
+        checkbox[i].addEventListener("change", () => {
+        });
+    }
+    if (checkbox[0].checked === true && checkbox[1].checked === true && checkbox[2].checked === false && checkbox[3].checked === false) {
+        resultDiv.innerText = String.fromCodePoint(0x1F389) + " Congratulation, that's the correct answer! " + String.fromCodePoint(emojis[randomInt])
+        resultDiv.style.color = "#33991A"
+    }
+    else {
+        resultDiv.innerText = "That's incorrect. The correct answer is " + "Tuna and Salmon" + "."
+        resultDiv.style.color = "#FF4D4D"
+    }
+}

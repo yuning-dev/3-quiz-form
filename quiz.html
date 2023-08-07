@@ -16,14 +16,13 @@
             <div id = "result1" class = "result"></div>
         </div>
         <div class = "question">
-            <p>What are the 2 most consumed fish in the world? (To select the second fish, hold the ctrl or cmd key and left click the option)</p>
-            <select name = "mostEatenFish" size = "4" multiple = "multiple" id = "mostEatenFish">
-                <option value = "tuna">Tuna</option>
-                <option value = "salmon">Salmon</option>
-                <option value = "sardines">Sardines</option>
-                <option value = "cod">Cod</option>
-            </select>
-            <input type = "submit" value = "Confirm choice" id = "confirmMultiSelect" />
+            <p>What are the 2 most consumed fish in the world?</p>
+            <input type = "checkbox" name = "mostEatenFish" value = "tuna" id = "tuna"/>Tuna
+            <input type = "checkbox" name = "mostEatenFish" value = "salmon" id = "salmon"/>Salmon
+            <input type = "checkbox" name = "mostEatenFish" value = "sardines" id = "sardines"/>Sardines
+            <input type = "checkbox" name = "mostEatenFish" value = "cod" id = "cod"/>Cod
+            <input type = "submit" value = "Confirm selection" id = "confirmSelection" onclick = "checkSelection()"/>
+            <div id = "result5" class = "result"></div>
         </div>
         <div class = "question">
             <p>The animal with the biggest eyes is the giant squid. What object is closest to the size of their eyes?</p>
@@ -45,9 +44,6 @@
             <input type = "radio" name = "densestFur" value = "mountainGorilla" onclick = "showCorrectAnswer3()"/>Mountain gorilla
             <input type = "radio" name = "densestFur" value = "seaOtter" onclick = "congratulate3()"/>Sea otter
             <div id = "result3" class = "result"></div>
-        </div>
-        <div class = "submitButton">
-            <input type = "submit" value = "Submit" />
         </div>
     </div>
 </body>
