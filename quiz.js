@@ -49,7 +49,6 @@ function showCorrectAnswer3() {
 }
 
 function checkTextInput() {
-    console.log('Called')
     let randomInt = generateInteger(20)
     let userInput = Number(document.getElementById("flightSpeed").value)
     let resultDiv = document.getElementById("result4")
@@ -79,5 +78,26 @@ function checkSelection() {
     else {
         resultDiv.innerText = "That's incorrect. The correct answer is " + "Tuna and Salmon" + "."
         resultDiv.style.color = "#FF4D4D"
+    }
+}
+
+const imagesArray = ["images/cat.jpg", "images/corgi.jpg", "images/fox.jpg", "images/horse.jpg", "images/kangaroo.jpg", "images/lemur.jpg", "images/robin.jpg", "images/walrus.jpg", "images/zebra.jpg"]
+const container = document.getElementById("imageSection")
+
+let currentIndex = 0
+
+function nextImage() {
+    currentIndex++
+    document.getElementById("mainImg").src = imagesArray[currentIndex - 1]
+    if (currentIndex === 9) {
+        currentIndex = 0
+    }
+}
+
+function previousImage() {
+    currentIndex--
+    document.getElementById("mainImg").src = imagesArray[currentIndex]
+    if (currentIndex === -1) {
+        currentIndex = 8
     }
 }

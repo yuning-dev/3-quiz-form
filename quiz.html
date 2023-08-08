@@ -45,6 +45,17 @@
             <input type = "radio" name = "densestFur" value = "seaOtter" onclick = "congratulate3()"/>Sea otter
             <div id = "result3" class = "result"></div>
         </div>
+        <div class = "imageContainer">
+            <div class = "arrowContainer">
+                <img src = "images/backward_arrow.png" class = "arrow" id = "backArrow" width = "60px" onclick = "previousImage()">
+            </div>
+            <div id = "imageSection">
+                <img src = "images/dog.jpg" alt = "" id = "mainImg" height = "350px" onclick = "nextImage()">
+            </div>
+            <div class = "arrowContainer">
+                <img src = "images/forward_arrow.png" class = "arrow" id = "forwardArrow" width = "60px" onclick = "nextImage()">
+            </div>
+        </div>
     </div>
 </body>
 <script src = "quiz.js"></script>

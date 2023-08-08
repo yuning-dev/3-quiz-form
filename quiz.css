@@ -15,6 +15,11 @@ h1 {
     padding: 15px 0;
 }
 
+img {
+    display: block;
+    margin: auto;
+}
+
 .question {
     margin: 60px 0;
     font-size: 1.2em;
@@ -40,10 +45,6 @@ input[type = "text"] {
     margin-top: 30px;
 }
 
-.submitButton {
-    text-align: center;
-}
-
 input[type = "submit"] {
     font-size: 0.9em;
     background: rgb(34, 144, 169);
@@ -54,5 +55,23 @@ input[type = "submit"] {
 }
 
 input[type = "submit"]:hover {
+    cursor: pointer;
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrowContainer {
+    display: inline-block;
+}
+
+#imageSection {
+    display: inline-block;
+}
+
+.arrow:hover {
     cursor: pointer;
 }
