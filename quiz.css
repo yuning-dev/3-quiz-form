@@ -22,7 +22,7 @@ img {
 
 .question {
     margin: 60px 0;
-    font-size: 1.2em;
+    font-size: 15pt;
 }
 
 input[type = "radio"] {
@@ -43,10 +43,11 @@ input[type = "text"] {
 
 .result {
     margin-top: 30px;
+    font-size: 20px;
 }
 
 input[type = "submit"] {
-    font-size: 0.9em;
+    font-size: 13pt;
     background: rgb(34, 144, 169);
     border-color:rgb(34, 144, 169);
     color: white;
@@ -56,6 +57,22 @@ input[type = "submit"] {
 
 input[type = "submit"]:hover {
     cursor: pointer;
+}
+
+#submitButton {
+    display: block;
+    margin: auto;
+    margin-bottom: 80px;
+}
+
+#finalResult {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+#optionalImage {
+    display: none;
+    margin-bottom: 55px;
 }
 
 .imageContainer {
@@ -69,7 +86,7 @@ input[type = "submit"]:hover {
 }
 
 #imageSection {
-    display: inline-block;
+    width: 650px;
 }
 
 .arrow:hover {

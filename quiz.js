@@ -2,25 +2,26 @@ let emojis = [0x1F600, 0x1F604, 0x1F34A, 0x1F344, 0x1F37F, 0x1F363, 0x1F370, 0x1
     0x1F354, 0x1F35F, 0x1F6C0, 0x1F48E, 0x1F5FA, 0x23F0, 0x1F579, 0x1F4DA,
     0x1F431, 0x1F42A, 0x1F439, 0x1F424];
 
-function congratulate1() {
+function congratulate(resultDiv) {
     let randomInt = generateInteger(20)
-    let result = document.getElementById("result1")
+    let result = document.getElementById(resultDiv)
     result.innerText = String.fromCodePoint(0x1F389) + " Congratulation, that's the correct answer! " + String.fromCodePoint(emojis[randomInt])
     result.style.color = "#33991A"
+}
+
+function congratulate1() {
+    let resultDiv = "result1"
+    congratulate(resultDiv)
 }
 
 function congratulate2() {
-    let randomInt = generateInteger(20)
-    let result = document.getElementById("result2")
-    result.innerText = String.fromCodePoint(0x1F389) + " Congratulation, that's the correct answer! " + String.fromCodePoint(emojis[randomInt])
-    result.style.color = "#33991A"
+    let resultDiv = "result2"
+    congratulate(resultDiv)
 }
 
 function congratulate3() {
-    let randomInt = generateInteger(20)
-    let result = document.getElementById("result3")
-    result.innerText = String.fromCodePoint(0x1F389) + " Congratulation, that's the correct answer! " + String.fromCodePoint(emojis[randomInt])
-    result.style.color = "#33991A"
+    let resultDiv = "result3"
+    congratulate(resultDiv)
 }
 
 function generateInteger(max) {
@@ -30,22 +31,28 @@ function generateInteger(max) {
     return integer
 }
 
+function showCorrectAnswer(resultDiv, correctAnswer) {
+    let result = document.getElementById(resultDiv)
+    result.innerText = "That's incorrect. The correct answer is " + correctAnswer + "."
+    result.style.color = "#FF4D4D"
+}
+
 function showCorrectAnswer1() {
-    let resultDiv = document.getElementById("result1")
-    resultDiv.innerText = "That's incorrect. The correct answer is " + "5m" + "."
-    resultDiv.style.color = "#FF4D4D"
+    let resultDiv = "result1"
+    let correctAnswer = "5m"
+    showCorrectAnswer(resultDiv, correctAnswer)
 }
 
 function showCorrectAnswer2() {
-    let resultDiv = document.getElementById("result2")
-    resultDiv.innerText = "That's incorrect. The correct answer is " + "A dinner plate" + "."
-    resultDiv.style.color = "#FF4D4D"
+    let resultDiv = "result2"
+    let correctAnswer = "a dinner plate"
+    showCorrectAnswer(resultDiv, correctAnswer)
 }
 
 function showCorrectAnswer3() {
-    let resultDiv = document.getElementById("result3")
-    resultDiv.innerText = "That's incorrect. The correct answer is " + "Sea otter" + "."
-    resultDiv.style.color = "#FF4D4D"
+    let resultDiv = "result3"
+    let correctAnswer = "sea otter"
+    showCorrectAnswer(resultDiv, correctAnswer)
 }
 
 function checkTextInput() {
@@ -76,12 +83,62 @@ function checkSelection() {
         resultDiv.style.color = "#33991A"
     }
     else {
-        resultDiv.innerText = "That's incorrect. The correct answer is " + "Tuna and Salmon" + "."
+        resultDiv.innerText = "That's incorrect. The correct answer is " + "tuna and salmon" + "."
         resultDiv.style.color = "#FF4D4D"
     }
 }
 
-const imagesArray = ["images/cat.jpg", "images/corgi.jpg", "images/fox.jpg", "images/horse.jpg", "images/kangaroo.jpg", "images/lemur.jpg", "images/robin.jpg", "images/walrus.jpg", "images/zebra.jpg"]
+function submitQuiz() {
+    let answerStatus = [0, 0, 0, 0, 0]
+    let checkedButton1 = document.querySelector('input[name="giraffeHeight"]:checked').value
+    if (checkedButton1 === "5m") {
+        congratulate1()
+        answerStatus[0] = 1
+    }  else {
+        showCorrectAnswer1()
+    }
+    let checkedButton2 = document.querySelector('input[name="eyesSize"]:checked').value
+    if (checkedButton2 === "plate") {
+        congratulate2()
+        answerStatus[1] = 1
+    }  else {
+        showCorrectAnswer2()
+    }
+    let checkedButton3 = document.querySelector('input[name="densestFur"]:checked').value
+    if (checkedButton3 === "seaOtter") {
+        congratulate3()
+        answerStatus[2] = 1
+    }  else {
+        showCorrectAnswer3()
+    }
+    checkSelection()
+    let checkbox = document.getElementsByName("mostEatenFish")
+    if (checkbox[0].checked === true && checkbox[1].checked === true && checkbox[2].checked === false && checkbox[3].checked === false) {
+        answerStatus[3] = 1
+    }
+    checkTextInput()
+    let userInput = Number(document.getElementById("flightSpeed").value)
+    if (userInput === 35) {
+        answerStatus[4] = 1
+    }
+    let userScore = answerStatus[0] + answerStatus[1] + answerStatus[2] + answerStatus[3] + answerStatus[4]
+    let finalResult = document.getElementById("finalResult")
+    if (userScore <=2) {
+        finalResult.innerText = "Oh no! You only scored " + userScore + " out of 5. " + String.fromCodePoint(0x1F63F)
+        finalResult.style.color = "purple"
+    }
+    if (userScore === 3) {
+        finalResult.innerText = "Congratulations, you scored 3 out of 5. Not bad at all lad/lass! " + String.fromCodePoint(0x1F60E)
+        finalResult.style.color = "blue"
+    }
+    if (userScore >= 4) {
+        finalResult.innerText = "Congratulations, you scored " + userScore + " out of 5. You've done exceedlingly well. " + String.fromCodePoint(0x1F379)
+        document.getElementById("optionalImage").style.display = "block"
+        finalResult.style.color = "fuchsia"
+    }
+}
+
+const imagesArray = ["images/dog.jpg", "images/cat.jpg", "images/corgi.jpg", "images/fox.jpg", "images/horse.jpg", "images/kangaroo.jpg", "images/lemur.jpg", "images/robin.jpg", "images/walrus.jpg", "images/zebra.jpg"]
 const container = document.getElementById("imageSection")
 
 let currentIndex = 0
@@ -89,15 +146,15 @@ let currentIndex = 0
 function nextImage() {
     currentIndex++
     document.getElementById("mainImg").src = imagesArray[currentIndex - 1]
-    if (currentIndex === 9) {
+    if (currentIndex === 10) {
         currentIndex = 0
     }
 }
 
 function previousImage() {
     currentIndex--
-    document.getElementById("mainImg").src = imagesArray[currentIndex]
-    if (currentIndex === -1) {
-        currentIndex = 8
+    document.getElementById("mainImg").src = imagesArray[currentIndex + 10]
+    if (currentIndex === -10) {
+        currentIndex = 0
     }
 }

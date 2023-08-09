@@ -9,48 +9,54 @@
         <h2>Think you have a pretty good grasp of animal facts? Test your knowledge and you may surprise yourself...</h2>
         <div class = "question">
             <p>The tallest animal is the giraffe. What is their average height?</p>
-            <input type = "radio" name = "giraffeHeight" value = "3m" onclick = "showCorrectAnswer1()"/> 3m
-            <input type = "radio" name = "giraffeHeight" value = "4m" onclick = "showCorrectAnswer1()"/> 4m
-            <input type = "radio" name = "giraffeHeight" value = "5m" onclick = "congratulate1()"/> 5m
-            <input type = "radio" name = "giraffeHeight" value = "6m" onclick = "showCorrectAnswer1()"/> 6m
+            <label><input type = "radio" name = "giraffeHeight" value = "3m" /> 3m</label>
+            <label><input type = "radio" name = "giraffeHeight" value = "4m" /> 4m</label>
+            <label><input type = "radio" name = "giraffeHeight" value = "5m" /> 5m</label>
+            <label><input type = "radio" name = "giraffeHeight" value = "6m" /> 6m</label>
             <div id = "result1" class = "result"></div>
         </div>
         <div class = "question">
             <p>What are the 2 most consumed fish in the world?</p>
-            <input type = "checkbox" name = "mostEatenFish" value = "tuna" id = "tuna"/>Tuna
-            <input type = "checkbox" name = "mostEatenFish" value = "salmon" id = "salmon"/>Salmon
-            <input type = "checkbox" name = "mostEatenFish" value = "sardines" id = "sardines"/>Sardines
-            <input type = "checkbox" name = "mostEatenFish" value = "cod" id = "cod"/>Cod
-            <input type = "submit" value = "Confirm selection" id = "confirmSelection" onclick = "checkSelection()"/>
+            <label><input type = "checkbox" name = "mostEatenFish" value = "tuna" id = "tuna"/>tuna</label>
+            <label><input type = "checkbox" name = "mostEatenFish" value = "salmon" id = "salmon"/>salmon</label>
+            <label><input type = "checkbox" name = "mostEatenFish" value = "sardines" id = "sardines"/>sardines</label>
+            <label><input type = "checkbox" name = "mostEatenFish" value = "cod" id = "cod"/>cod</label>
             <div id = "result5" class = "result"></div>
         </div>
         <div class = "question">
             <p>The animal with the biggest eyes is the giant squid. What object is closest to the size of their eyes?</p>
-            <input type = "radio" name = "eyesSize" value = "carTire" onclick = "showCorrectAnswer2()"/>A car tire
-            <input type = "radio" name = "eyesSize" value = "plate" onclick = "congratulate2()"/>A dinner plate 
-            <input type = "radio" name = "eyesSize" value = "pizza" onclick = "showCorrectAnswer2()"/>A large pizza
-            <input type = "radio" name = "eyesSize" value = "busTire" onclick = "showCorrectAnswer2()"/>A bus tire
+            <label><input type = "radio" name = "eyesSize" value = "carTire" />a car tire</label>
+            <label><input type = "radio" name = "eyesSize" value = "plate" />a dinner plate</label>
+            <label><input type = "radio" name = "eyesSize" value = "pizza" />a large pizza</label>
+            <label><input type = "radio" name = "eyesSize" value = "busTire" />a bus tire</label>
             <div id = "result2" class = "result"></div>
         </div>
         <div class = "question">The fastest flying insect is the dragonfly. What is their recorded speed? Enter an integer value below. (Hint: the answer is a multiple of 5)
             <br>
-            <input type = "text" maxlength="2" id = "flightSpeed" onchange = "checkTextInput()"/> miles per hour
+            <input type = "text" maxlength="2" id = "flightSpeed" /> miles per hour
             <div id = "result4" class = "result"></div>
         </div>
         <div class = "question">
             <p>What is the animal with the densest fur?</p>
-            <input type = "radio" name = "densestFur" value = "chinchilla" onclick = "showCorrectAnswer3()"/>Chinchilla
-            <input type = "radio" name = "densestFur" value = "polarBear" onclick = "showCorrectAnswer3()"/>Polar bear
-            <input type = "radio" name = "densestFur" value = "mountainGorilla" onclick = "showCorrectAnswer3()"/>Mountain gorilla
-            <input type = "radio" name = "densestFur" value = "seaOtter" onclick = "congratulate3()"/>Sea otter
+            <label><input type = "radio" name = "densestFur" value = "chinchilla" />chinchilla</label>
+            <label><input type = "radio" name = "densestFur" value = "polarBear" />polar bear</label>
+            <label><input type = "radio" name = "densestFur" value = "mountainGorilla" />mountain gorilla</label>
+            <label><input type = "radio" name = "densestFur" value = "seaOtter" />sea otter</label>
             <div id = "result3" class = "result"></div>
+        </div>
+        <div class = "submit">
+            <input type = "submit" value = "Submit" id = "submitButton" onclick = "submitQuiz()">
+        </div>
+        <div id = "finalResult" class = "result"></div>
+        <div id = "optionalImageSection">
+            <img src = "images/fireworks.jpg" id = "optionalImage" width = "700px">
         </div>
         <div class = "imageContainer">
             <div class = "arrowContainer">
                 <img src = "images/backward_arrow.png" class = "arrow" id = "backArrow" width = "60px" onclick = "previousImage()">
             </div>
             <div id = "imageSection">
-                <img src = "images/dog.jpg" alt = "" id = "mainImg" height = "350px" onclick = "nextImage()">
+                <img src = "images/defImage.png" alt = "" id = "mainImg" height = "350px" onclick = "nextImage()">
             </div>
             <div class = "arrowContainer">
                 <img src = "images/forward_arrow.png" class = "arrow" id = "forwardArrow" width = "60px" onclick = "nextImage()">
