@@ -145,16 +145,16 @@ let currentIndex = 0
 
 function nextImage() {
     currentIndex++
-    document.getElementById("mainImg").src = imagesArray[currentIndex - 1]
-    if (currentIndex === 10) {
+    if (currentIndex >= 10) {
         currentIndex = 0
     }
+    document.getElementById("mainImg").src = imagesArray[currentIndex]
 }
 
 function previousImage() {
     currentIndex--
-    document.getElementById("mainImg").src = imagesArray[currentIndex + 10]
-    if (currentIndex === -10) {
-        currentIndex = 0
+    if (currentIndex < 0) {
+        currentIndex = 9
     }
+    document.getElementById("mainImg").src = imagesArray[currentIndex]
 }
